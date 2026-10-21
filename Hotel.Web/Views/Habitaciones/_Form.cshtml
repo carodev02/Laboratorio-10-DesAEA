@@ -1,0 +1,5 @@
+@model Habitacion
+<div asp-validation-summary="ModelOnly"></div><div class="form-grid">
+<div class="field"><label asp-for="Numero">Número</label><input asp-for="Numero" class="form-control" placeholder="Ej. 104" /><span asp-validation-for="Numero" class="text-danger"></span></div>
+<div class="field"><label asp-for="Piso">Piso</label><input asp-for="Piso" class="form-control" min="1" /><span asp-validation-for="Piso" class="text-danger"></span></div>
+<div class="field"><label asp-for="IdTipoHabitacion">Tipo de habitación</label><select asp-for="IdTipoHabitacion" asp-items="ViewBag.Tipos" class="form-select"><option value="">Selecciona un tipo</option></select><span asp-validation-for="IdTipoHabitacion" class="text-danger"></span></div></div>

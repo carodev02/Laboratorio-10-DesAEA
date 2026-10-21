@@ -1,0 +1,9 @@
+@model Reserva
+@{ViewData["Title"]="Nueva reserva";}
+<div class="eyebrow">ESTANCIAS</div><h1 class="form-title">Crear una reserva</h1><div class="surface form-card"><form asp-action="Create"><div asp-validation-summary="ModelOnly"></div><div class="form-grid">
+<div class="field"><label asp-for="IdHuesped">Huésped</label><select asp-for="IdHuesped" asp-items="ViewBag.Huespedes" class="form-select"><option value="">Selecciona un huésped</option></select><span asp-validation-for="IdHuesped" class="text-danger"></span></div>
+<div class="field"><label asp-for="IdHabitacion">Habitación</label><select asp-for="IdHabitacion" asp-items="ViewBag.Habitaciones" class="form-select"><option value="">Selecciona una habitación</option></select><span asp-validation-for="IdHabitacion" class="text-danger"></span></div>
+<div class="field"><label asp-for="FechaIngreso">Fecha de ingreso</label><input asp-for="FechaIngreso" type="date" class="form-control"/><span asp-validation-for="FechaIngreso" class="text-danger"></span></div>
+<div class="field"><label asp-for="FechaSalida">Fecha de salida</label><input asp-for="FechaSalida" type="date" class="form-control"/><span asp-validation-for="FechaSalida" class="text-danger"></span></div>
+<div class="field" style="grid-column:1/-1"><label asp-for="Observaciones">Observaciones</label><textarea asp-for="Observaciones" class="form-control" rows="3" maxlength="200" placeholder="Añade una solicitud para la estancia"></textarea><span asp-validation-for="Observaciones" class="text-danger"></span></div></div><div class="form-actions"><button class="btn-primary" type="submit">Guardar reserva</button><a class="btn-secondary-soft" asp-action="Index">Cancelar</a></div></form></div>
+@section Scripts {<partial name="_ValidationScriptsPartial"/>}

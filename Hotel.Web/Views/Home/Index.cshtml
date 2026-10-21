@@ -1,0 +1,43 @@
+@{
+    ViewData["Title"] = "Bienvenido";
+}
+
+<section class="welcome-hero">
+    <div class="hero-copy">
+        <div class="eyebrow hero-eyebrow"><span class="eyebrow-dot"></span> HOTEL AURORA · UN LUGAR PARA VOLVER</div>
+        <h1>Tu pausa<br />empieza <em>aquí.</em></h1>
+        <p>Un espacio para bajar el ritmo, descansar con comodidad y disfrutar cada momento de tu estancia.</p>
+        <div class="hero-actions">
+            <a class="hero-button" asp-controller="Reservas" asp-action="Disponibles">Buscar habitaciones <span>↗</span></a>
+            <a class="hero-text-link" asp-controller="Habitaciones" asp-action="Index">Explorar el hotel <span>→</span></a>
+        </div>
+        <div class="hero-note"><span class="note-icon">✦</span><span><strong>Tu estancia, a tu ritmo</strong><small>Elige fechas y encuentra tu espacio ideal.</small></span></div>
+    </div>
+    <div class="hero-visual" role="img" aria-label="Vista luminosa de un hotel rodeado de jardines">
+        <div class="visual-shade"></div>
+        <div class="visual-tag"><span class="tag-mark">A</span><span><strong>Hotel Aurora</strong><small>Calma en cada detalle</small></span></div>
+        <div class="visual-caption"><span>UN NUEVO DESTINO</span><strong>Descansa.<br />Respira. Disfruta.</strong></div>
+        <div class="visual-index">01 <span>—</span> 03</div>
+    </div>
+</section>
+
+<section class="welcome-search surface">
+    <div class="search-intro"><span class="search-icon">⌕</span><span><strong>Planea tu estancia</strong><small>Consulta fechas disponibles</small></span></div>
+    <form asp-controller="Reservas" asp-action="Disponibles" method="get" class="search-fields">
+        <label>Ingreso<input name="ingreso" type="date" min="@DateTime.Today.ToString("yyyy-MM-dd")" value="@DateTime.Today.ToString("yyyy-MM-dd")" required /></label>
+        <span class="date-divider">→</span>
+        <label>Salida<input name="salida" type="date" min="@DateTime.Today.AddDays(1).ToString("yyyy-MM-dd")" value="@DateTime.Today.AddDays(1).ToString("yyyy-MM-dd")" required /></label>
+        <button type="submit" class="search-submit">Ver disponibilidad <span>↗</span></button>
+    </form>
+</section>
+
+<section class="welcome-details">
+    <div class="details-heading"><div><div class="eyebrow">BIENVENIDO A AURORA</div><h2>Un hotel hecho para<br /><em>sentirte bien.</em></h2></div><p>Habitaciones acogedoras, espacios serenos y una atención pensada para que solo te ocupes de disfrutar.</p></div>
+    <div class="welcome-perks">
+        <article class="perk"><span class="perk-number">01</span><div class="perk-icon">⌂</div><h3>Tu espacio ideal</h3><p>Encuentra habitaciones para descansar a tu manera, desde una escapada breve hasta una estancia en familia.</p><a asp-controller="Habitaciones" asp-action="Index">Conocer habitaciones <span>→</span></a></article>
+        <article class="perk"><span class="perk-number">02</span><div class="perk-icon">✧</div><h3>Reserva con facilidad</h3><p>Revisa las fechas disponibles y organiza tu próxima visita en unos pocos pasos.</p><a asp-controller="Reservas" asp-action="Disponibles">Consultar fechas <span>→</span></a></article>
+        <article class="perk"><span class="perk-number">03</span><div class="perk-icon">♡</div><h3>Detalles que importan</h3><p>Comparte tus observaciones al reservar y prepárate para una estancia más tuya.</p><a asp-controller="Reservas" asp-action="Create">Crear una reserva <span>→</span></a></article>
+    </div>
+</section>
+
+<section class="welcome-final"><div><div class="eyebrow">TU PRÓXIMA ESTANCIA</div><h2>¿Listo para desconectar?</h2><p>Elige tus fechas y empieza a planear tu visita a Hotel Aurora.</p></div><a class="hero-button" asp-controller="Reservas" asp-action="Disponibles">Consultar disponibilidad <span>↗</span></a></section>

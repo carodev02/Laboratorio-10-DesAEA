@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>@ViewData["Title"] · Hotel Aurora</title><link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /><link rel="stylesheet" href="~/css/site.css" asp-append-version="true" /><link rel="stylesheet" href="~/css/welcome.css" asp-append-version="true" /></head>
+<body>
+<header class="topbar"><nav class="navbar navbar-expand-lg shell">
+    <a class="brand" asp-controller="Home" asp-action="Index"><span class="brand-mark">A</span><span>aurora<small>HOTEL & ESTANCIAS</small></span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Abrir menú"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="mainNav"><div class="navbar-nav ms-auto"><a class="nav-link" asp-controller="Habitaciones" asp-action="Index">Habitaciones</a><a class="nav-link" asp-controller="Reservas" asp-action="Disponibles">Disponibilidad</a><a class="nav-link" asp-controller="Reservas" asp-action="Index">Reservas</a></div><a class="nav-cta" asp-controller="Reservas" asp-action="Create">Nueva reserva <span>↗</span></a></div>
+</nav></header>
+<main class="shell page-content">
+    @if (TempData["Mensaje"] is string mensaje) { <div class="toast-message" role="status"><span>✓</span> @mensaje</div> }
+    @RenderBody()
+</main>
+<footer class="shell footer"><span>© @DateTime.Now.Year Hotel Aurora</span><span>Estancias pensadas para sentirse bien</span></footer>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+@await RenderSectionAsync("Scripts", required: false)
+</body></html>

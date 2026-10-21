@@ -1,0 +1,4 @@
+@model Habitacion
+@{ViewData["Title"]="Nueva habitación";}
+<div class="eyebrow">ALOJAMIENTO</div><h1 class="form-title">Registrar habitación</h1><div class="surface form-card"><form asp-action="Create"><partial name="_Form" model="Model"/><div class="form-actions"><button class="btn-primary" type="submit">Guardar habitación</button><a class="btn-secondary-soft" asp-action="Index">Cancelar</a></div></form></div>
+@section Scripts {<partial name="_ValidationScriptsPartial"/>}
